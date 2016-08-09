@@ -1,0 +1,48 @@
+﻿生成启动时间为 2016/8/9 12:05:08。
+     1>项目“F:\windows-airplay-sdk\xindawn-airplay-sdk-example\xindawn-airplay-sdk-example.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /I.\utils /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt HomeXml.c utils\xdw_list.c utils\xdw_lock.c utils\xdw_socket_ipc.c
+         HomeXml.c
+         xdw_list.c
+     1>utils\xdw_list.c(377): warning C4133: “=”: 从“xdw_list_head *”到“list_head *”的类型不兼容
+         xdw_lock.c
+         xdw_socket_ipc.c
+     1>F:\windows-airplay-sdk\xindawn-airplay-sdk-example\include\stdint.h(162): warning C4005: “SIZE_MAX”: 宏重定义
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits.h(81) : 参见“SIZE_MAX”的前一个定义
+     1>utils\xdw_socket_ipc.c(59): warning C4101: “ret”: 未引用的局部变量
+     1>utils\xdw_socket_ipc.c(91): warning C4550: 表达式计算为缺少参数列表的函数
+     1>utils\xdw_socket_ipc.c(86): warning C4101: “ret”: 未引用的局部变量
+     1>utils\xdw_socket_ipc.c(116): warning C4550: 表达式计算为缺少参数列表的函数
+     1>utils\xdw_socket_ipc.c(104): warning C4101: “msg”: 未引用的局部变量
+     1>utils\xdw_socket_ipc.c(128): warning C4550: 表达式计算为缺少参数列表的函数
+         正在生成代码...
+     1>f:\windows-airplay-sdk\xindawn-airplay-sdk-example\utils\xdw_lock.c(31): warning C4716: “xdw_mutex_lock”: 必须返回一个值
+     1>f:\windows-airplay-sdk\xindawn-airplay-sdk-example\utils\xdw_lock.c(42): warning C4716: “xdw_mutex_unlock”: 必须返回一个值
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /I.\utils /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt VideoSource.cpp
+         VideoSource.cpp
+     1>f:\windows-airplay-sdk\xindawn-airplay-sdk-example\VideoSource.h(161): warning C4099: “VideoSource”: 类型名称以前使用“struct”现在使用的是“class”
+                 f:\windows-airplay-sdk\xindawn-airplay-sdk-example\VideoSource.h(91) : 参见“VideoSource”的声明
+     1>VideoSource.cpp(63): warning C4996: 'avcodec_alloc_frame': 被声明为已否决
+                 F:\windows-airplay-sdk\xindawn-airplay-sdk-example\include\libavcodec/avcodec.h(3491) : 参见“avcodec_alloc_frame”的声明
+     1>VideoSource.cpp(64): warning C4996: 'avcodec_alloc_frame': 被声明为已否决
+                 F:\windows-airplay-sdk\xindawn-airplay-sdk-example\include\libavcodec/avcodec.h(3491) : 参见“avcodec_alloc_frame”的声明
+     1>VideoSource.cpp(151): warning C4018: “<”: 有符号/无符号不匹配
+     1>VideoSource.cpp(153): warning C4018: “<”: 有符号/无符号不匹配
+     1>VideoSource.cpp(504): warning C4996: 'avcodec_alloc_frame': 被声明为已否决
+                 F:\windows-airplay-sdk\xindawn-airplay-sdk-example\include\libavcodec/avcodec.h(3491) : 参见“avcodec_alloc_frame”的声明
+     1>VideoSource.cpp(505): warning C4996: 'avcodec_alloc_frame': 被声明为已否决
+                 F:\windows-airplay-sdk\xindawn-airplay-sdk-example\include\libavcodec/avcodec.h(3491) : 参见“avcodec_alloc_frame”的声明
+     1>VideoSource.cpp(696): warning C4244: “return”: 从“__int64”转换到“long”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\windows-airplay-sdk\xindawn-airplay-sdk-example\Release\xindawn-airplay-sdk-example.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\lib airmediaserve.lib avcodec.lib avformat.lib avutil.lib avdevice.lib avfilter.lib postproc.lib swresample.lib swscale.lib SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\windows-airplay-sdk\xindawn-airplay-sdk-example\Release\xindawn-airplay-sdk-example.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\windows-airplay-sdk\xindawn-airplay-sdk-example\Release\xindawn-airplay-sdk-example.lib" /MACHINE:X86 /SAFESEH /SAFESEH:NO Release\HomeXml.obj
+         Release\xdw_list.obj
+         Release\xdw_lock.obj
+         Release\xdw_socket_ipc.obj
+         Release\VideoSource.obj
+         LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能
+         xindawn-airplay-sdk-example.vcxproj -> F:\windows-airplay-sdk\xindawn-airplay-sdk-example\Release\xindawn-airplay-sdk-example.exe
+     1>已完成生成项目“F:\windows-airplay-sdk\xindawn-airplay-sdk-example\xindawn-airplay-sdk-example.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.81
