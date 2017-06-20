@@ -1113,8 +1113,8 @@ void VideoSource::start_airplay()
 	SDL_EventState(SDL_USEREVENT, SDL_IGNORE);
 
 
-	screen_w = 1280;// this->codecCtx->width;
-	screen_h = 720;// this->codecCtx->height;
+	screen_w = 1920;// this->codecCtx->width;
+	screen_h = 1080;// this->codecCtx->height;
 	screen = SDL_SetVideoMode(screen_w, screen_h, 0, 0x115);
 
 	bmp = SDL_CreateYUVOverlay(screen_w, screen_h, SDL_YV12_OVERLAY, screen);
@@ -1124,11 +1124,11 @@ void VideoSource::start_airplay()
 
 
 
-	SDL_LockYUVOverlay(bmp);
-	memcpy(bmp->pixels[0], Home_xml,  bmp->w*bmp->h);
-	memcpy(bmp->pixels[2], Home_xml + bmp->w*bmp->h,  (bmp->w * bmp->h) >> 2);
-	memcpy(bmp->pixels[1], Home_xml + bmp->w*bmp->h + ((bmp->w * bmp->h) >> 2), (bmp->w*bmp->h) >> 2);
-	SDL_UnlockYUVOverlay(bmp);
+	//SDL_LockYUVOverlay(bmp);
+	//memcpy(bmp->pixels[0], Home_xml,  bmp->w*bmp->h);
+	//memcpy(bmp->pixels[2], Home_xml + bmp->w*bmp->h,  (bmp->w * bmp->h) >> 2);
+	//memcpy(bmp->pixels[1], Home_xml + bmp->w*bmp->h + ((bmp->w * bmp->h) >> 2), (bmp->w*bmp->h) >> 2);
+	//SDL_UnlockYUVOverlay(bmp);
 	rect.x = 0;
 	rect.y = 0;
 	rect.w = screen_w;
@@ -1164,7 +1164,8 @@ void VideoSource::start_airplay()
 	ao.AirPlayMirroring_Process		= AirPlayOutputFunctions::mirroring_process;
 	ao.AirPlayMirroring_Stop		= AirPlayOutputFunctions::mirroring_stop;
 
-	XinDawn_StartMediaServer("test", 1280, 720, &ao);
+
+	int ret = XinDawn_StartMediaServer("XinDawn",".\\Debug\\airmediaserve.dll", 1920, 1080,"000000000", &ao);
 
 
 }
