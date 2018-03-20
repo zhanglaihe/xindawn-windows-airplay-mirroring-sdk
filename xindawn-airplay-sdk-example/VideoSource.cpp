@@ -440,7 +440,7 @@ int VideoState::queue_picture(AVFrame *pFrame)
 	SDL_Rect rect;
 
 
-	if (this->sws_context == NULL || width != this->codecCtx->width || height != this->codecCtx->height)
+	if (this->sws_context == NULL || width != pFrame->width || height != pFrame->height)
 	{
 
 		//
@@ -454,17 +454,17 @@ int VideoState::queue_picture(AVFrame *pFrame)
 			this->sws_context = NULL;
 		}
 
-		int w = this->codecCtx->width;
-		int h = this->codecCtx->height;
+		int w = pFrame->width;
+		int h = pFrame->height;
 
 
-		this->sws_context = sws_getContext(w, h, this->codecCtx->pix_fmt,
+		this->sws_context = sws_getContext(w, h, (AVPixelFormat)pFrame->format,
 			w, h, PIX_FMT_YUV420P, SWS_BICUBIC /*SWS_POINT*/,
 			NULL, NULL, NULL);
 	}
 
-	width  = this->codecCtx->width;
-	height = this->codecCtx->height;
+	width = pFrame->width;
+	height = pFrame->height;
 
 	SDL_LockYUVOverlay(((VideoSource *)this->vsource)->bmp);
 	this->pFrameYUV->data[0] = ((VideoSource *)this->vsource)->bmp->pixels[0] + ((((VideoSource *)this->vsource)->screen_w - width) >> 1);
@@ -474,7 +474,7 @@ int VideoState::queue_picture(AVFrame *pFrame)
 	this->pFrameYUV->linesize[1] = ((VideoSource *)this->vsource)->bmp->pitches[2];
 	this->pFrameYUV->linesize[2] = ((VideoSource *)this->vsource)->bmp->pitches[1];
 	sws_scale(this->sws_context, (const uint8_t* const*)pFrame->data, pFrame->linesize, 0,
-		this->codecCtx->height, this->pFrameYUV->data, this->pFrameYUV->linesize);
+		pFrame->height, this->pFrameYUV->data, this->pFrameYUV->linesize);
 
 
 	SDL_UnlockYUVOverlay(((VideoSource *)this->vsource)->bmp);
