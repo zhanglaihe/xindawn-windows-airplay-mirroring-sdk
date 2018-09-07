@@ -11,7 +11,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_thread.h>
 
-#if (_MSC_VER == 1900) 
+#if (_MSC_VER >= 1900) 
 
 extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
 #pragma  comment(lib, "legacy_stdio_definitions.lib") 
